@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -23,6 +24,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+      body: Column(
+        children: [
+          ListTile(
+            title: Text('message'.tr),
+            subtitle: Text('name'.tr),
+          ),
+          const SizedBox(height: 20,),
+          Row(
+            children: [
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(const Locale('en', 'US'));
+              }, child: const Text('English'),),
+              const SizedBox(width: 20,),
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(const Locale('bn', 'BD'));
+              }, child: const Text('Bangla'),),
+            ],
+          ),
+        ],
+      ),
+
     );
   }
 }

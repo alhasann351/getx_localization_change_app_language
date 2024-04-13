@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_localization_change_app_language/languages.dart';
 import 'my_home_page.dart';
 
 void main() {
@@ -11,9 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      locale: const Locale('bn', 'BD'),
+      translations: Languages(),
+      fallbackLocale: const Locale('en', 'US'),
+      home: const MyHomePage(),
     );
   }
 }
